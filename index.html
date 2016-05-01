@@ -14,34 +14,54 @@
         background-repeat: repeat-y;
       }
 
-      #content {
-        margin-top: 400px;
-        background-color: rgb(255, 255, 255);
-      }
-
-      h1 {
-        overflow: hidden;
-        text-align: left;
-        padding: 10px;
-        font-weight: normal;
-        font-family: 'Archivo Black', sans-serif;
-        font-size: 7em;
-        margin: 400px 0px 0px 0px; 
-      }
-      span {
-        background: url(bg.jpg) no-repeat;
-        -webkit-text-fill-color: transparent;
-        -webkit-background-clip: text;
-        display: block;
-        background-position: center -400px;
+      #header {
+        width: 100%;
       }
 
     </style>
   </head>
   <body>
 
-    <div id=content>
-      <h1><span>Fredrik Järnbröst</span></h1>
+    <div id="header">
+
+      <svg
+        version="1.1"
+        viewBox="0 0 200 80"
+        xmlns="http://www.w3.org/2000/svg" 
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+
+        <defs>
+            <mask
+              id="myMask"
+              maskUnits="userSpaceOnUse"
+              x="0"
+              y="0"
+              width="1000"
+              height="200">
+                <rect 
+                  x="0"
+                  y="0"
+                  width="1000"
+                  height="200"
+                  fill="white" />
+                <text 
+                  id="Text"
+                  x="0"
+                  y="1em"
+                  font-family="Archivo Black, sans-serif"
+                  font-size="6em"
+                  font-weight="bold"
+                  text-anchor="left"
+                  fill="black">
+                    Fredrik Järnbröst
+                </text>
+            </mask>
+        </defs>
+        <rect x="0" y="0" width="1000" height="200" fill="white" mask="url(#myMask)" />  
+      </svg>
+
+      <span></span>
+
     </div>
 
   </body>
