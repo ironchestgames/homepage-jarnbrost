@@ -3,30 +3,124 @@
   <head>
     <meta charset="UTF-8" />
     <title>Fredriks hemsida</title>
-    <link href='https://fonts.googleapis.com/css?family=Archivo+Black' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Share+Tech' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Work+Sans:200' rel='stylesheet' type='text/css'>
     <style>
 
+      html {
+        height: 100%;
+        overflow: hidden;
+      }
+
       body {
-        background-image: url(bg.jpg);
+        background-color: #f0f;
         background-position: 50% 0;
         margin: 0 auto;
         background-attachment: scroll;
         background-repeat: repeat-y;
+        perspective: 1px;
+        transform-style: preserve-3d;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
+
+      div, h1, p {
+        margin: 0;
       }
 
       #header {
         width: 100%;
       }
 
+      p {
+        background-color: white;
+      }
+
+      .slide:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left:0;
+        right:0;
+      }
+
+      .slide {
+        position: relative;
+        min-height: 80vh;
+        width: 100vw;
+        box-sizing: border-box;
+        transform-style: inherit;
+      }
+
+      .slide:nth-child(2n) .title {
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .slide:nth-child(2n+1) .title {
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .slide, .slide:before {
+        background: 50% 50% / cover;  
+      }
+
+      #header:before {
+        background-image: url(bg.jpg);
+        transform: translateZ(-1.9px) scale(3);
+        z-index:-1;
+      }
+
+      .content {
+        width: 50%;
+        margin: 0 auto;
+        padding: 5em;
+      }
+
+      .content img {
+        /*display: inline-block;*/
+      }
+
+      .content div {
+        /*display: inline-block;*/
+      }
+
+      #section1 {
+        background-color: #fff;
+        margin: 0 auto;
+      }
+
+      #section1 div {
+        color: #222;
+        font-family: 'Work Sans', sans-serif;
+        font-size: 1.2em;
+      }
+
+      #section2 {
+        background-color: #222;
+        margin: 0;
+      }
+
+      #section2 h1 {
+        color: #f0f0f0;
+        font-family: 'Share Tech', sans-serif;
+        font-size: 4em;
+        text-align: center;
+        padding: 3em;
+      }
+
     </style>
   </head>
   <body>
 
-    <div id="header">
+    <div id="header" class="slide">
 
       <svg
         version="1.1"
-        viewBox="0 0 200 80"
+        viewBox="0 0 1000 400"
         xmlns="http://www.w3.org/2000/svg" 
         xmlns:xlink="http://www.w3.org/1999/xlink">
 
@@ -37,32 +131,39 @@
               x="0"
               y="0"
               width="1000"
-              height="200">
+              height="400">
                 <rect 
                   x="0"
                   y="0"
                   width="1000"
-                  height="200"
+                  height="400"
                   fill="white" />
                 <text 
                   id="Text"
                   x="0"
                   y="1em"
-                  font-family="Archivo Black, sans-serif"
-                  font-size="6em"
+                  font-family="Share Tech, sans-serif"
+                  font-size="26em"
                   font-weight="bold"
                   text-anchor="left"
                   fill="black">
-                    Fredrik Järnbröst
+                    Järnbr
                 </text>
             </mask>
         </defs>
-        <rect x="0" y="0" width="1000" height="200" fill="white" mask="url(#myMask)" />  
+        <rect x="0" y="0" width="1000" height="400" fill="white" mask="url(#myMask)" />
       </svg>
-
-      <span></span>
-
     </div>
 
+    <div id="section1">
+      <div class="content">
+        <img src="bg.jpg" width="100" height="80" />
+        <div>"A funny quote here would look good. So good. Really, really good. I mean, come on."</div>
+      </div>
+    </div>
+
+    <div id="section2">
+      <h1>Very nice header</h1>
+    </div>
   </body>
 </html>
